@@ -33,7 +33,7 @@ class SearchActivity : AppCompatActivity() {
         setContentView(searchBinding.root)
 
         val adapter = HospitalAdapter { hospital ->
-            // 클릭된 항목에 대한 처리
+
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("name", hospital.name)
             intent.putExtra("tel", hospital.tel)
@@ -61,7 +61,6 @@ class SearchActivity : AppCompatActivity() {
             intent.putExtra("lng", hospital.lng)
             intent.putExtra("lat", hospital.lat)
 
-            // 필요한 경우 추가 데이터 전달
             startActivity(intent)
         }
         searchBinding.rvHospitals.adapter = adapter
@@ -91,15 +90,11 @@ class SearchActivity : AppCompatActivity() {
             val apiCallback = object : Callback<HospitalRoot> {
                 override fun onResponse(call: Call<HospitalRoot>, response: Response<HospitalRoot>) {
                     if (response.isSuccessful) {
-                        // HospitalRoot 객체에서 병원 목록 추출
                         val allHospitals = response.body()?.tbHospitalInfo?.hospitals ?: listOf()
-
-                        // 사용자가 입력한 검색어로 병원 목록 필터링
                         val filteredHospitals = filterHospitals(allHospitals, searchQuery)
-
                         if (filteredHospitals.isNotEmpty()) {
                             Log.d(TAG, "Filtered Hospitals Found: ${filteredHospitals.size}")
-                            // 필터링된 병원 목록을 어댑터에 설정하고 UI 업데이트
+
                             adapter.hospitals = filteredHospitals
                             adapter.notifyDataSetChanged()
                         } else {

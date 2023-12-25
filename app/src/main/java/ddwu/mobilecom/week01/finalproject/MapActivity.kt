@@ -143,7 +143,7 @@ class MapActivity : AppCompatActivity() {
         if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
             && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
         ) {
-            startLocUpdates() // 권한이 있을 경우 위치 업데이트 재개
+            startLocUpdates()
         }
     }
 
@@ -162,7 +162,6 @@ class MapActivity : AppCompatActivity() {
     }
 
 
-    /*registerForActivityResult 는 startActivityForResult() 대체*/
     val locationPermissionRequest = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
         when {
             permissions.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false) -> {
@@ -184,10 +183,8 @@ class MapActivity : AppCompatActivity() {
             currentLoc = locResult.locations[0]
             val newMarkerLoc: LatLng = LatLng(currentLoc.latitude, currentLoc.longitude)
 
-            // 이전 마커가 있으면 제거
             marker?.remove()
 
-            // 새로운 마커 추가
             addMarker(newMarkerLoc)
 
             if (isFirst) {
@@ -219,7 +216,7 @@ class MapActivity : AppCompatActivity() {
     }
 
     fun addMarker(targetLoc: LatLng) {
-        marker?.remove() // 기존 마커가 있으면 제거
+        marker?.remove()
 
         val markerOptions: MarkerOptions = MarkerOptions()
         markerOptions.position(targetLoc)

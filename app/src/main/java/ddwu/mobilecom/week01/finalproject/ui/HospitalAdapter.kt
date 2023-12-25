@@ -29,18 +29,14 @@ class HospitalAdapter(private val onClick: (Hospital) -> Unit) : RecyclerView.Ad
             holder.itemBinding.tvAddress.text = it.addr  // 병원 주소
             holder.itemBinding.tvPhone.text = it.tel  // 병원 전화번호
 
-
-            // 뷰 높이 명시적 설정
             holder.itemBinding.root.layoutParams = holder.itemBinding.root.layoutParams.apply {
                 height = ViewGroup.LayoutParams.WRAP_CONTENT
             }
 
-            // 아이템 클릭 시 DetailActivity로 이동
             holder.itemView.setOnClickListener {
                 onClick(hospital)
             }
 
-            // 기타 로그 출력
             Log.d(TAG, "Item at position $position - Height: ${holder.itemBinding.root.layoutParams.height}")
         }
     }

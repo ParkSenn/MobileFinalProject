@@ -29,7 +29,6 @@ class DetailActivity : AppCompatActivity() {
         detailBinding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(detailBinding.root)
 
-        // Intent에서 'name' 데이터를 가져옴
         name = intent.getStringExtra("name")
         val tel = intent.getStringExtra("tel")
         val addr = intent.getStringExtra("addr")
@@ -59,7 +58,6 @@ class DetailActivity : AppCompatActivity() {
         val lat = latStr?.toDoubleOrNull() ?: 0.0
         targetLoc = LatLng(lat, lng)
 
-        // 'tvHosName' TextView에 가져온 'name'을 설정
         detailBinding.tvHosName.text = name
         detailBinding.tvHosTel.text = tel
         detailBinding.tvHosAddr.text = "${addr}\n${mapimg}"

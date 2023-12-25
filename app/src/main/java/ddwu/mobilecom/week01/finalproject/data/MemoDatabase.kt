@@ -13,7 +13,6 @@ abstract class MemoDatabase : RoomDatabase() {
         @Volatile       // Main memory 에 저장한 값 사용
         private var INSTANCE : MemoDatabase? = null
 
-        // INSTANCE 가 null 이 아니면 반환, null 이면 생성하여 반환
         fun getDatabase(context: Context) : MemoDatabase {
             return INSTANCE ?: synchronized(this) {     // 단일 스레드만 접근
                 val instance = Room.databaseBuilder(context.applicationContext,
