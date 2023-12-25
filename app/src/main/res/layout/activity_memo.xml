@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MemoActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="283dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="63dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvHosName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:fontFamily="@font/sejong_hospital_bold"
+            android:text="name" />
+
+        <TextView
+            android:id="@+id/tvHosAddr"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:text="addr" />
+
+        <TextView
+            android:id="@+id/tvHosTel"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:fontFamily="@font/sejong_hospital_light"
+            android:text="tel" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="80dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hospital_logo" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/sejong_hospital_bold"
+        android:text="이 병원에 대한 간단한 리뷰나 메모를 남겨보세요!"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/mtvMemo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/mtvMemo"
+        android:layout_width="375dp"
+        android:layout_height="303dp"
+        android:layout_marginBottom="188dp"
+        android:background="@drawable/memo_border"
+        android:hint="여기에 작성하세요."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="180dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="88dp"
+        android:fontFamily="@font/sejong_hospital_bold"
+        android:text="작성 완료"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

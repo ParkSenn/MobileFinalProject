@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+
+            android:layout_width="363dp"
+            android:layout_height="321dp"
+            app:cameraTargetLat="37.606537"
+            app:cameraTargetLng="127.041758"
+            app:cameraZoom="13"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.96"
+            app:mapType="normal"
+            app:uiZoomControls="true" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="80dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/hospital_logo" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="280dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvHosName"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:fontFamily="@font/sejong_hospital_bold"
+                    android:text="name" />
+
+                <TextView
+                    android:id="@+id/tvHosTel"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:fontFamily="@font/sejong_hospital_light"
+                    android:text="tel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/map"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                <TextView
+                    android:id="@+id/tvHosAddr"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:fontFamily="@font/sejong_hospital_light"
+                    android:text="addr" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sejong_hospital_bold"
+                    android:text="진료 시간" />
+
+                <TextView
+                    android:id="@+id/tvHosTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="77dp"
+                    android:fontFamily="@font/sejong_hospital_light"
+                    android:text="open-close Time" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/memoBtn"
+            android:layout_width="192dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="13dp"
+            android:fontFamily="@font/sejong_hospital_bold"
+            android:text="병원 후기 남기러 가기"
+            app:layout_constraintBottom_toTopOf="@+id/map"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintVertical_bias="0.111" />
+
+
+        <!--    <ScrollView-->
+        <!--        android:id="@+id/scrollView2"-->
+        <!--        android:layout_width="375dp"-->
+        <!--        android:layout_height="583dp"-->
+        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent">-->
+
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/linearLayout"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginBottom="16dp"-->
+        <!--            android:orientation="vertical">-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView6"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="49dp"-->
+        <!--                android:text="addr, mapimg" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView7"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="104dp"-->
+        <!--                android:text="날마다 운영시간" />-->
+        <!--        </LinearLayout>-->
+        <!--    </ScrollView>-->
+
+        <!--    <fragment-->
+        <!--        android:id="@+id/map"-->
+        <!--        android:name="com.google.android.gms.maps.SupportMapFragment"-->
+        <!--        android:layout_width="0dp"-->
+        <!--        android:layout_height="273dp"-->
+        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--        app:layout_constraintEnd_toEndOf="@+id/scrollView2"-->
+        <!--        app:layout_constraintHorizontal_bias="0.551"-->
+        <!--        app:layout_constraintStart_toStartOf="@+id/scrollView2"-->
+        <!--        app:layout_constraintTop_toTopOf="parent" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
