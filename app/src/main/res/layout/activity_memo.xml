@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A4CBE1"
     tools:context=".MemoActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="283dp"
-        android:layout_height="141dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="63dp"
@@ -20,23 +21,29 @@
 
         <TextView
             android:id="@+id/tvHosName"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/sejong_hospital_bold"
-            android:text="name" />
+            android:paddingVertical="10dp"
+            android:text="name"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tvHosAddr"
-            android:layout_width="match_parent"
-            android:layout_height="61dp"
-            android:text="addr" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:text="addr"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tvHosTel"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/sejong_hospital_light"
-            android:text="tel" />
+            android:paddingVertical="10dp"
+            android:text="tel"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <ImageView
@@ -49,6 +56,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.256"
         app:srcCompat="@drawable/hospital_logo" />
 
     <TextView
@@ -75,13 +83,15 @@
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/saveBtn"
         android:layout_width="180dp"
         android:layout_height="53dp"
         android:layout_marginBottom="88dp"
         android:fontFamily="@font/sejong_hospital_bold"
         android:text="작성 완료"
+        android:background="#306F9D"
+        android:textColor="#CAE5F6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

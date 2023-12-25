@@ -49,7 +49,7 @@ class MemoActivity : AppCompatActivity() {
 
                     // UI 스레드로 전환하여 Toast 메시지 실행
                     withContext(Dispatchers.Main) {
-                        Toast.makeText(this@MemoActivity, "New memo is added!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@MemoActivity, "메모가 작성되었습니다!", Toast.LENGTH_SHORT).show()
                     }
                 } catch (e: Exception) {
                     Log.e(TAG, "Error inserting memo", e)

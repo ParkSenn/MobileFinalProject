@@ -198,7 +198,7 @@ class MapActivity : AppCompatActivity() {
             // 지도 카메라 위치 업데이트
 //            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(newMarkerLoc, 17F))
 
-            Toast.makeText(this@MapActivity, "위도: ${currentLoc.latitude}, 경도: ${currentLoc.longitude}", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this@MapActivity, "위도: ${currentLoc.latitude}, 경도: ${currentLoc.longitude}", Toast.LENGTH_SHORT).show()
         }
     }
 

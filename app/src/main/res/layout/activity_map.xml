@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A4CBE1"
     tools:context=".MapActivity">
 
     <fragment
@@ -18,9 +19,10 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.553"
+        app:layout_constraintVertical_bias="0.679"
         app:mapType="normal"
         app:uiZoomControls="true" />
 
@@ -33,22 +35,26 @@
         app:layout_constraintBottom_toTopOf="@+id/map"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.553"
         app:srcCompat="@drawable/hospital_mark_logo" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="78dp"
         android:elegantTextHeight="false"
         android:fontFamily="@font/sejong_hospital_bold"
         android:text="내 주변 병원을\n찾아보자!"
-        android:textSize="24sp"
+        android:textColor="#516C81"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/map"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintHorizontal_bias="0.407"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent"
-        app:lineHeight="30dp" />
+        app:layout_constraintVertical_bias="0.433"
+        app:lineHeight="70dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
